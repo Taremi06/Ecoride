@@ -1,0 +1,131 @@
+// Import variables personnalisées
+@import "variables.scss";
+@import "reset.scss";
+
+// Import de Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Ajout de styles personnalisés
+// Styles de la barre de navigation
+.navbar {
+    .navbar-brand {
+        font-family: $headline;
+        font-size: 22px;
+    }
+
+    .nav-link {
+        color: $secondary;
+    }
+
+    .nav-link:hover {
+        color: $secondary-hover;
+    }
+}
+
+// Styles de la section de titre
+.big-title {
+    background-image: url("/assets/images/Image_big_title.jpeg");
+    background-size: cover;
+    background-position: center;
+    opacity: 1.6;
+    height: 50vh;
+    color: white;
+    position: relative;
+}
+
+.slogan {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    z-index: 1;
+
+    @media (max-width: 992px) {
+        margin-top: 150px;
+    }
+}
+
+.search-bar-container {
+    position: absolute;
+    bottom: -1.875rem;
+    width: auto;
+    padding: 10px 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    background: white;
+    border: 1px solid $primary;
+    border-radius: 50px;
+    z-index: 2;
+
+    @media (max-width: 767px) {
+        padding: 20px; // Augmente l'espacement pour une meilleure lisibilité
+        width: auto; // Réduit la largeur pour mieux s'adapter
+        position: relative; // Supprime la position absolue sur mobile
+        margin: 0 auto; // Centre la section
+        bottom: -1%;
+    }
+}
+
+.search-bar {
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-around;
+
+    @media (max-width: 767px) {
+        flex-direction: column; // Empile les éléments
+        align-items: stretch; // Étend les éléments à 100% de largeur
+
+        .form-control {
+            max-width: 100%; // Les inputs occupent toute la largeur
+        }
+
+        .btn {
+            width: 25%; // Le bouton occupe toute la largeur
+        }
+    }
+}
+
+.search-bar .form-control {
+    max-width: 200px;
+}
+
+.search-bar .btn {
+    min-width: 120px;
+}
+
+// Styles de la section de présentation
+.presentation {
+    z-index: 1;
+    position: relative;
+    padding: 50px 0;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%; // Assure que les cartes prennent toute la largeur de leur conteneur
+        border: none;
+        gap: 20px;
+    }
+
+    .presentation-img {
+        width: 100%;
+        height: 320px; // Définissez la hauteur fixe
+        object-fit: cover; // Pour s'assurer que l'image garde ses proportions
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+footer{
+    p {
+    color: $secondary;
+    }
+    
+    .info {
+    }
+    
+}
